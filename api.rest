@@ -1,0 +1,49 @@
+###Test
+GET http://localhost:4000/api/petTraining
+
+###Crear producto servidor
+POST http://localhost:4000/api/petTraining
+Content-Type: application/json
+
+{
+    "code":2,
+    "status":false,
+    "Pet":"Pet",
+    "WeightPet":13,
+    "Configuration":0,
+    "BirthDay":"11 12 2021"
+}
+
+###Update Raciones y cantidad
+PUT http://localhost:4000/api/petTraining/
+Content-Type: application/json
+
+{
+    "FoodDiary":"190,225,260",
+    "RationsDiary":"4,3,2"
+}
+
+###Eliminar producto servidor
+DELETE  http://localhost:4000/api/petTraining/
+
+###ESP32
+GET http://localhost:4000/api/petTraining/61909f4801be1792102988f9
+
+
+###AppCel
+PUT http://localhost:4000/api/petTraining/6190a65619ff9b2da7a4f910
+Content-Type: application/json
+
+{
+    "Pet":"Dog",
+    "WeightPet":13,
+    "Configuration":1,
+    "BirthDay":"5 15 2021"
+}
+###ESP32
+PUT  http://localhost:4000/api/petTraining/
+Content-Type: application/json
+
+{
+    "status":"true"
+}
