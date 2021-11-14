@@ -7,6 +7,7 @@ const { getProduct } = require('../controllers/petTraining.controller');
      return new Promise(async(resolve,reject)=>{
         try {
             const foodDiary=calculateDailyFood(newProduct.BirthDay,newProduct.WeightPet);
+            const time=timeNow();
             const product = new productModel({
                 code:newProduct.code,
                 status:false,
@@ -16,6 +17,9 @@ const { getProduct } = require('../controllers/petTraining.controller');
                 BirthDay:newProduct.BirthDay,    
                 FoodDiary:foodDiary.portion,
                 RationsDiary:foodDiary.quantity,
+                hour:time.hour,
+                minute:time.minute,
+                second:time.second,
             });
             await product.save();
             resolve(product);
@@ -39,8 +43,12 @@ exports.getProducts = function (){
 function getProductByID(id){
     return new Promise(async(resolve,reject)=>{
        try {
-           const OnePetTranining= await productModel.findById(id)
-           resolve(OnePetTranining)
+           const foundProduct = await productModel.findById(id)
+           const time=timeNow();
+           foundProduct.hour=time.hour;
+           foundProduct.minute=time.minute;
+           foundProduct.second=time.second;
+           resolve(await productModel.findByIdAndUpdate(id, foundProduct ))
        } catch (error) {
            reject(error);
        }
@@ -49,7 +57,7 @@ function getProductByID(id){
 
 exports.getProduct = getProductByID;
 
-exports.editProduct = function (id,productUpdate){
+exports.editProduct =function (id,productUpdate){
     return new Promise(async(resolve,reject)=>{
        try {
            if(!_.isNil(productUpdate.BirthDay) && !_.isNil(productUpdate.WeightPet)){
@@ -67,6 +75,8 @@ exports.editProduct = function (id,productUpdate){
        }
     });
 }
+
+
 
 exports.deleteProducts = function (id){
     return new Promise(async(resolve,reject)=>{
@@ -119,3 +129,13 @@ function calculateAge(BirthDay) {
          quantity:foundCategory.rationDiary
      }
  }
+
+ function timeNow() {
+    let timeReal = new Date();
+    console.log(timeReal);
+    return {
+        hour:timeReal.getUTCHours()-5,
+        minute:timeReal.getUTCMinutes(),
+        second: timeReal.getUTCSeconds()
+    }
+}

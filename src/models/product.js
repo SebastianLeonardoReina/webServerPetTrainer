@@ -9,6 +9,9 @@ const petTrainingSchema= new Schema({
     BirthDay:{type:String, required: true},    
     FoodDiary:{type:Number, required: true},
     RationsDiary:{type:Number, required: true},
+    hour:{type:Number, required: true},
+    minute:{type:Number, required: true},
+    second:{type:Number, required: true},
 },{
     timestamps: true,
     versionKey: false

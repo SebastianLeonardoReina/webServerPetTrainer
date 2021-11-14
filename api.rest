@@ -2,16 +2,16 @@
 GET http://localhost:4000/api/petTraining
 
 ###Crear producto servidor
-POST http://localhost:4000/api/petTraining
+POST https://server-pettrainer.herokuapp.com/api/petTraining
 Content-Type: application/json
 
 {
-    "code":2,
+    "code":1,
     "status":false,
     "Pet":"Pet",
-    "WeightPet":13,
+    "WeightPet":1,
     "Configuration":0,
-    "BirthDay":"11 12 2021"
+    "BirthDay":"11 14 2021"
 }
 
 ###Update Raciones y cantidad
@@ -24,21 +24,21 @@ Content-Type: application/json
 }
 
 ###Eliminar producto servidor
-DELETE  http://localhost:4000/api/petTraining/
+DELETE  http://localhost:4000/api/petTraining/6190acc95495110aacae0ec8
 
 ###ESP32
-GET http://localhost:4000/api/petTraining/61909f4801be1792102988f9
+GET http://localhost:4000/api/petTraining/6190a65619ff9b2da7a4f910
 
 
 ###AppCel
-PUT http://localhost:4000/api/petTraining/6190a65619ff9b2da7a4f910
+PUT http://localhost:4000/api/petTraining/6190acc95495110aacae0ec8
 Content-Type: application/json
 
 {
     "Pet":"Dog",
     "WeightPet":13,
     "Configuration":1,
-    "BirthDay":"5 15 2021"
+    "BirthDay":"7 15 2021"
 }
 ###ESP32
 PUT  http://localhost:4000/api/petTraining/

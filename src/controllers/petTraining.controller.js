@@ -18,7 +18,7 @@ petTrainingCtrl.createProduct=(req,res)=>{
 
 petTrainingCtrl.getProduct=(req,res)=>{
     productServices.getProduct(req.params.id)
-    .then((OnePetTranining)=>res.send(OnePetTranining))
+    .then((foundProduct)=>res.send(foundProduct))
     .catch((error)=>res.status(500).send('Something broke!',error)); 
 };
 petTrainingCtrl.editProduct=(req,res)=>{
