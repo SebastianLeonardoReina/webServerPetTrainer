@@ -1,5 +1,5 @@
 ###Test
-GET http://localhost:4000/api/petTraining
+GET https://server-pettrainer.herokuapp.com/api/petTraining
 
 ###Crear producto servidor
 POST https://server-pettrainer.herokuapp.com/api/petTraining
@@ -27,7 +27,7 @@ Content-Type: application/json
 DELETE  http://localhost:4000/api/petTraining/6190acc95495110aacae0ec8
 
 ###ESP32
-GET http://localhost:4000/api/petTraining/6190a65619ff9b2da7a4f910
+GET https://server-pettrainer.herokuapp.com/api/petTraining/61915a95d16ba4a624e033dc
 
 
 ###AppCel

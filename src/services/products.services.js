@@ -48,7 +48,8 @@ function getProductByID(id){
            foundProduct.hour=time.hour;
            foundProduct.minute=time.minute;
            foundProduct.second=time.second;
-           resolve(await productModel.findByIdAndUpdate(id, foundProduct ))
+           await productModel.findByIdAndUpdate(id, foundProduct )
+           resolve(await productModel.findById(id));
        } catch (error) {
            reject(error);
        }
