@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 mongoose
-    .connect("mongodb://Localhost/mean-products",{
+    .connect("mongodb+srv://sebastian:6ZPGMkayH3se0cSk@cluster0.x5aim.mongodb.net/products?retryWrites=true&w=majority",{
         useUnifiedTopology:true,
         useNewUrlParser:true
     })
