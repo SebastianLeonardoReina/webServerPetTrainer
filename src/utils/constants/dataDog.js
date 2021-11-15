@@ -18,7 +18,7 @@ exports.dataDog = [
             },
             {
                 "edadMin":6,
-                "edadMax":null,
+                "edadMax":1000000000000,
                 "rationDiary":120,
                 "portionDiary":2
             }
@@ -32,19 +32,19 @@ exports.dataDog = [
             {
                 "edadMin":0,
                 "edadMax":3,
-                "rationDiary":90,
+                "rationDiary":190,
                 "portionDiary":4
             },
             {
                 "edadMin":3,
                 "edadMax":6,
-                "rationDiary":105,
+                "rationDiary":225,
                 "portionDiary":3
             },
             {
                 "edadMin":6,
                 "edadMax":1000000000000,
-                "rationDiary":120,
+                "rationDiary":260,
                 "portionDiary":2
             }
         ]
@@ -57,19 +57,19 @@ exports.dataDog = [
             {
                 "edadMin":0,
                 "edadMax":3,
-                "rationDiary":90,
+                "rationDiary":310,
                 "portionDiary":4
             },
             {
                 "edadMin":3,
                 "edadMax":6,
-                "rationDiary":105,
+                "rationDiary":360,
                 "portionDiary":3
             },
             {
                 "edadMin":6,
-                "edadMax":null,
-                "rationDiary":120,
+                "edadMax":1000000000000,
+                "rationDiary":410,
                 "portionDiary":2
             }
         ]
