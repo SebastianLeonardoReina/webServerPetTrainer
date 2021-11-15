@@ -133,9 +133,15 @@ function calculateAge(BirthDay) {
 
  function timeNow() {
     let timeReal = new Date();
+    let hour=timeReal.getUTCHours()
     console.log(timeReal);
+    if(hour<5){
+        hour=hour+19;
+    }else{
+        hour=hour-5;
+    }
     return {
-        hour:timeReal.getUTCHours()-5,
+        hour,
         minute:timeReal.getUTCMinutes(),
         second: timeReal.getUTCSeconds()
     }
